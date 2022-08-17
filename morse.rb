@@ -34,7 +34,9 @@ end
 puts decode_char('.-')
 
 def decode_word(str)
+    # rubocop:disable Style/FormatString
   str.split(' ').map { |char| decode_char(char) }.join
+    # rubocop:enable Style/FormatString
 end
 
 puts decode_word('-- -.--   -. .- -- .')
