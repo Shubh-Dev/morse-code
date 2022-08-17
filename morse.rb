@@ -28,16 +28,19 @@ MORSE_MAP = {
 }.freeze
 
 def decode_char(str)
-  MORSE_MAP.key(str).capitalize
+  MORSE_MAP.key(str).upcase
 end
+
+puts decode_char('.-')
 
 def decode_word(str)
-  str.split(' ').map { |char| decode_char(char) }.join('')
-end
-
-def decode(str)
-  str.split('   ').map { |word| decode_word(word) }.join(' ')
+  str.split(' ').map { |char| decode_char(char) }.join
 end
 
 puts decode_word('-- -.--   -. .- -- .')
-puts decode('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+
+def decode_sentence(str)
+  str.split('   ').map { |word| decode_word(word) }.join(' ')
+end
+
+puts decode_sentence('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
