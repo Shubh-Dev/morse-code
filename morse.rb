@@ -34,15 +34,16 @@ end
 puts decode_char('.-')
 
 def decode_word(str)
-    # rubocop:disable Style/FormatString
-  str.split(' ').map { |char| decode_char(char) }.join
-    # rubocop:enable Style/FormatString
+    str.split(' ').map { |char| decode_char(char) }.join
 end
 
-puts decode_word('-- -.--   -. .- -- .')
+
+
 
 def decode_sentence(str)
   str.split('   ').map { |word| decode_word(word) }.join(' ')
 end
 
 puts decode_sentence('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+
+puts decode_sentence("-- -.--   -. .- -- .")
