@@ -34,11 +34,8 @@ end
 puts decode_char('.-')
 
 def decode_word(str)
-    str.split(' ').map { |char| decode_char(char) }.join
+  str.split(' ').map { |char| decode_char(char) }.join
 end
-
-
-
 
 def decode_sentence(str)
   str.split('   ').map { |word| decode_word(word) }.join(' ')
@@ -46,4 +43,4 @@ end
 
 puts decode_sentence('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
 
-puts decode_sentence("-- -.--   -. .- -- .")
+puts decode_sentence('-- -.--   -. .- -- .')
