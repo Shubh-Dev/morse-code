@@ -31,7 +31,7 @@ def decode_char(str)
   MORSE_MAP.key(str).upcase
 end
 
-puts decode_char('.-')
+# puts decode_char('.-')
 
 def decode_word(str)
   str.split(' ').map { |char| decode_char(char) }.join
@@ -41,6 +41,6 @@ def decode_sentence(str)
   str.split('   ').map { |word| decode_word(word) }.join(' ')
 end
 
-puts decode_sentence('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+# puts decode_sentence('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
 
-puts decode_sentence('-- -.--   -. .- -- .')
+# puts decode_sentence('-- -.--   -. .- -- .')
